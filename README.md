@@ -11,7 +11,7 @@ SlideActionView is a simple widget that provides a nice slide-to-left/right inte
 <img src="https://github.com/priyankabb153/Slide_Action_View/blob/master/screenshots/slideactionview.gif" width="256">
 
 ## Dependency
-1. For using instalike module in sample app, include the source code and add the below dependencies in entry/build.gradle to generate hap/support.har.
+1. For using slideactionview module in sample app, include the source code and add the below dependencies in entry/build.gradle to generate hap/support.har.
 ```groovy
 	dependencies {
 		implementation project(':slideactionview')
@@ -19,7 +19,7 @@ SlideActionView is a simple widget that provides a nice slide-to-left/right inte
                 testImplementation 'junit:junit:4.13'
 	}
 ```
-2. For using instalike in separate application using har file, add the har file in the entry/libs folder and add the dependencies in entry/build.gradle file.
+2. For using slideactionview in separate application using har file, add the har file in the entry/libs folder and add the dependencies in entry/build.gradle file.
 ```groovy
 	dependencies {
 		implementation fileTree(dir: 'libs', include: ['*.har'])
@@ -29,7 +29,7 @@ SlideActionView is a simple widget that provides a nice slide-to-left/right inte
 
 ## Usage
 
-#### Adding the SlideActionView somewhere in your layout is fairly simple. Here is an example:
+Adding the SlideActionView somewhere in your layout is fairly simple. Here is an example:
 
 ```xml
 <me.jfenn.slideactionview.SlideActionView
@@ -40,7 +40,7 @@ SlideActionView is a simple widget that provides a nice slide-to-left/right inte
     ohos:width="match_parent"/>
 ```
 
-#### You will then want to specify icons for the left/right "slides". This can be done using the setLeftIcon and setRightIcon methods of the view. They accept both a Element and PixelMap, but it is more efficient to pass a PixelMap if possible.
+You will then want to specify icons for the left/right "slides". This can be done using the ``setLeftIcon`` and ``setRightIcon`` methods of the view. They accept both a ``Element`` and ``PixelMap``, but it is more efficient to pass a ``PixelMap`` if possible.
 
 ```java
 SlideActionView view = (SlideActionView) findComponentById(ResourceTable.Id_SlideAction);
@@ -51,7 +51,7 @@ Optional<PixelMapElement> element1 = getElementByResId(ResourceTable.Media_unloc
 PixelMap pixelMap1 = getPixelMapFromDrawable(element1.get()).get();
 view.setRightIcon(pixelMap1);
 ```
-#### In order to listen for the swipe actions, you must implement the SlideActionListener interface.
+In order to listen for the swipe actions, you must implement the ``SlideActionListener`` interface.
 ```java
 view.setListener(new SlideActionView.SlideActionListener() {
   @Override
